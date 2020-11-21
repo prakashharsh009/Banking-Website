@@ -1,0 +1,87 @@
+<!-- Including Header File Template by EJS -->
+<%- include("partials/header") -%>
+
+
+
+<p style="background-color:orange"class="subheading-text">Transaction History</p>
+
+
+
+
+
+<style>
+table {
+  position:absolute;
+  z-index:1;
+  top:230px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<table action ="/transact" method="post">
+  <tr>
+    <th>Sender-Account</th>
+    <th>Receiver-Account</th>
+    <th>Amount Transacted</th>
+  </tr>
+
+
+<% transactionArr.forEach(function(transactions){ %>
+
+
+
+
+  <tr>
+    <td id="senderT"><%= transactions.senderInfo %></td>
+    <td id="receiverT"><%= transactions.receiverInfo %></td>
+    <td id="amountT"><%= transactions.amountTransacted %></td>
+  </tr>
+
+
+
+
+
+<% }); %>
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Including Footer File Template by EJS -->
+
+<%- include("partials/footer") -%>
